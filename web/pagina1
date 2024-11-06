@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Informacion general de ordenadores</title>
+</head>
+<body>
+<h1>Ordenadores</h1>
+<p>Computadora, computador u ordenador123 es una máquina electrónica digital programable que ejecuta una serie de comandos para procesar los datos de entrada, obteniendo convenientemente información que posteriormente se envía a las unidades de salida.</p>
+
+<p>Una computadora está compuesta por numerosos y diversos circuitos integrados y varios elementos de apoyo, extensión y accesorios, que en conjunto pueden ejecutar tareas diversas con suma rapidez y bajo el control de un programa (software)</p>
+
+<table border="2">
+<tr>
+<th>Nombre</th>
+<th>Procesador</th>
+<th><a href="https://www.pccomponentes.com/">Enlace</a></th>
+</tr>
+<tr>
+<td>PcCom Ready</td>
+<td>AMD Ryzen 7 5800X 3.8GHz</td>
+<td><a href="https://www.pccomponentes.com/pccom-ready-amd-ryzen-7-5800x-32gb-1tb-ssd-rtx-4060-ti-windows-11-home">Enlace</a></td>
+</tr>
+<tr>
+<td>Ordenador Sobremesa Epical-Q Mortimer</td>
+<td>AMD Ryzen 5 5500</td>
+<td><a href="https://www.pccomponentes.com/ordenador-sobremesa-epical-q-mortimer-amd-ryzen-5-5500-16gb-1tb-ssd-rtx-4060">Enlace</a></td>
+</tr>
+<tr>
+<td>PcVIP Spot</td>
+<td>AMD Ryzen 5 5500</td>
+<td><a href="https://www.pccomponentes.com/pcvip-spot-amd-ryzen-5-5500-16gb-1tb-ssd-rtx4060-windows-11-pro">Enlace</a></td>
+</tr>
+</table>
+<p><a href="../Index">Inicio</a></p>
+</body>
+</html>
