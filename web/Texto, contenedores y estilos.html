@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holas</title>
+</head>
+<body>
+    <style>
+        #cd{
+            font-style: italic;
+            text-align: right;
+        }
+        #mt {
+            text-transform:uppercase;
+            text-decoration: line-through;
+        }
+        #f20 {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 120%;
+        }
+        #nsv {
+            font-weight: bold;
+            text-shadow: -4px 3px 5px green;
+        }
+
+        #container{
+            display: flex;
+
+        }
+        #a{
+            background-color: beige;
+            display: inline-block;
+            width: 400px;
+            height: 200px;
+  
+        }
+
+        #b {
+            background-color: aquamarine;
+            display: block;
+            width: 400px;
+            height: 200px;
+        }
+        #c {
+            background-color: lightcoral;
+            display: inline-block;
+            width: 400px;
+            height: 200px;
+        }
+
+      .adiv{
+        width: 100px;
+        height: 50px;
+        display: inline-block;
+      }
+        .bdiv{
+            width: 100px;
+            height: 50px;
+            display: block;
+        }
+        .cdiv{
+            display: inline-block;
+            width: 100px;
+            height: 50px;
+        }
+
+        #ptext {
+            font-weight: bold;
+        }
+
+    </style>
+    <p id="cd">Este es el párrafo número 1 en cursiva y alineado a la derecha.</p>
+    <p id="mt">Este también es un párrafo en minúsculas pero convertido en mayúsculas y tachado</p>
+    <p id="f20">Como no hay dos sin tres, este será el tercero con un tipo de letra diferente y un 20% más grande.</p>
+    <p id="nsv">Y por último, un texto en negrita y con sombrita en verde.</p>
+
+    
+    
+    <div id="container">
+        <div id="a">
+
+            <p id="ptext">Buscadores</p>
+            <div class="adiv" style="background-color: lightsalmon;"><a href="https://www.opera.com/es" style="color: white;">Opera</a></div>
+            <div class="adiv" style="background-color: orangered;"><a href="https://brave.com/?lang=es" style="color: white;">Brave</a></div>
+            <div class="adiv"style="background-color: lightblue"><a href="https://www.google.com/" style="color: white;">Google</a></div>
+            
+        </div>
+        <div id="b">
+
+            <p id="ptext">Redes Sociales</p>
+            <div class="bdiv" style="background-color: red;"><a href="https://www.youtube.com/" style="color: white;">Youtube</a></div>
+            <div class="bdiv" style="background-color: black;"><a href="https://x.com/?lang=es" style="color: white;">X</a></div>
+            <div class="bdiv"style="background-color: purple"><a href="https://www.instagram.com/" style="color: white;">Instagram</a></div>
+           
+        </div>
+        <div id="c">
+
+            <p id="ptext">Noticias</p>
+            <div class="cdiv" style="background-color: darkred;"><a href="https://www.marca.com/" style="color: white;">Marca</a></div>
+            <div class="cdiv" style="background-color: blue;"><a href="https://elpais.es/?lang=es" style="color: white;">El país</a></div>
+            <div class="cdiv"style="background-color: darkgreen"><a href="https://www.elmundo.es/" style="color: white;">El mundo</a></div>
+        </div>
+    </div>
+</body>
+</html>
