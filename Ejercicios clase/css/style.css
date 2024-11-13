@@ -1,28 +1,84 @@
-.grande{
+.tamaño {
+  display: block;
+  margin: 3px;
+  padding: 2px;
+  background-color: burlywood;
+  color: darkgreen;
+  font-weight: bold;
+  border: 1px solid black;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.divtamaño {
+  margin: 3px;
+  padding: 5px;
+  font-size: 20px;
+  border: 1px solid black;
+}
+
+#contenedor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#e2red {
+  width: 150px;
+  height: 150px;
+  margin: auto;
+  background-image: url("../../img/casa.png");
+  background-size: 60px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 2px solid red;
+}
+
+#e2blue {
+  width: 150px;
+  height: 150px;
+  margin: auto;
+  background-image: url("../../img/casa.png");
+  background-size: 60px;
+  background-repeat: repeat-x;
+  background-position: bottom;
+  border: 2px solid blue;
+}
+
+#e2green {
+  width: 150px;
+  height: 150px;
+  margin: auto;
+  background-image: url("../../img/casa.png");
+  background-size: 60px;
+  background-repeat: repeat-y;
+  background-position: right;
+  border: 2px solid green;
+}
+
+.grande {
+  display: flex;
+  width: 50%;
+  background-color: black;
+  color: white;
+  background-color: aqua;
+  margin: auto;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.chico {
+  padding: 5%;
+  text-decoration: none;
+}
+.container {
     display: flex;
-    width: 50%;
-    background-color: black;
-    color: white;
-    background-color: aqua;
-    margin: auto;
-    justify-content: space-around;
-    align-items: center;
-}
-.chico{
-    padding: 5%;
-    text-decoration: none;
-}
-
-.container{
-display: flex;
-flex-direction: row;
-flex-wrap: wrap;
-gap: 1rem;
-}
-
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
 .card {
-    flex: 1 1 30%;
-    padding: 1rem;
-    border: 1px solid black;
-    background-color: lightgray;
+  flex: 1 1 30%;
+  padding: 1rem;
+  border: 1px solid black;
+  background-color: lightgray;
 }
