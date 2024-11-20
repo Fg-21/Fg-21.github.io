@@ -9,6 +9,7 @@ header {
   border-radius: 5px;
   text-align: left;
   padding: 15px;
+  box-shadow: -2px 5px 10px darkblue;
 
 }
 a{
@@ -47,7 +48,7 @@ padding: 20px;
    background-color: #333;
    color: white;
    text-align: center;
-   padding: 50px;
+   padding: 20px;
 }
 
 #imagenes_inicio{
