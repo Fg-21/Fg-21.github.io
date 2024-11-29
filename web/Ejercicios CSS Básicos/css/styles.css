@@ -108,6 +108,8 @@ textarea {
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 16px;
+  max-width: 97.5%;
+  max-height: 200px;
 }
 
 button {
