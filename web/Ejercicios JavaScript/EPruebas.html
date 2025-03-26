@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Números</h1>
+    <input type="number" id="num1">
+    <input type="number" id="num2">
+    <button id="Suma">Suma</button>
+    <button id="Resta">Resta</button>
+    <button id="Multiplicación">Multiplicación</button>
+    <button id="División">División</button>
+    <div id="vacio"></div>
+  </body>
+</html>
+<script>
+  //EjercicioOperaciones
+  let user = "Fran",
+    edad = "19";
+
+  //Sumar
+  document.getElementById("Suma").addEventListener("click", () => {
+    a = parseInt(document.getElementById("num1").value);
+    b = parseInt(document.getElementById("num2").value);
+    const textoSuma = document.createElement("p");
+    textoSuma.textContent = 'La suma es ' + (a + b);
+    document.getElementById("vacio").append(textoSuma);
+  });
+
+  //Restar
+  document.getElementById("Resta").addEventListener("click", () => {
+    const a = parseInt(document.getElementById("num1").value);
+    const b = parseInt(document.getElementById("num2").value);
+    const textoSuma = document.createElement("p");
+    textoSuma.textContent = a - b;
+    document.getElementById("vacio").append(textoSuma);
+  });
+
+  //Multiplicar
+  document.getElementById("Multiplicación").addEventListener("click", () => {
+    const textoSuma = document.createElement("p");
+    textoSuma.textContent = a * b;
+    document.getElementById("vacio").append(textoSuma);
+  });
+
+  //Dividir
+  document.getElementById("División").addEventListener("click", () => {
+    const textoSuma = document.createElement("p");
+    textoSuma.textContent = a / b;
+    document.getElementById("vacio").append(textoSuma);
+  });
+</script>
+<script>
+    //Ejercicio2
+    let numero = 3, age = 20;
+    
+    //Par o impar
+    console.log(numero%2 == 0 ? "Es par" : "Es impar");
+
+    //Votar
+    console.log(age >= 18 ? "Puede votar" : "No puede votar");
+
+    //Bucle del 1 al 10
+    for (let i = 1; i <= 10; i++){
+        console.log (i);
+    }
+
+    //Suma del 1 al 100
+    let suma = 0;
+    for (let i = 0; i <= 100; i++){
+        suma += i;
+    }
+    console.log (suma);
+</script>
+<script>
+    //Ejercicio3
+    let name = "Marco";
+
+    //Saludar
+    function saludar(name){
+        return ("Hola, " + name);
+    }
+    console.log(saludar(name));
+
+</script>
+

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+    <p id="frase"></p>
+    <br>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Edad</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <td id="nombre"></td>
+            <td id="apellido"></td>
+            <td id="edad"></td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        let prueba = {name: "Fran", second: "González", age: "19"};
+        prueba_serializada = serializar(prueba);
+        prueba_recuperada = deserializar(prueba_serializada);
+
+        $("#nombre").append(prueba.name);
+        $("#apellido").append(prueba.second);
+        $("#edad").append(prueba.age);
+
+
+
+        function serializar (prueba){
+            return JSON.stringify(prueba);   
+        }
+
+        function deserializar (prueba_serializada){
+            return JSON.parse(prueba_serializada);
+        }
+
+    </script>
+</body>
+</html>

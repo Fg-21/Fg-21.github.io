@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E3</title>
+
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <form id="formulario">
+      <label for="ID" id="id">ID</label>
+      <input type="text" id="idInput" />
+
+      <label for="Nombre" id="nombre">Nombre</label>
+      <input type="text" id="nombreInput" />
+
+      <label for="Edad" id="edad">Edad</label>
+      <input type="number" id="edadInput" />
+
+      <br /><br />
+
+      <button type="button" id="boton">Asignar a la tabla</button>
+
+      <br /><br />
+    </form>
+
+    <table border="1px">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Edad</th>
+        </tr>
+      </thead>
+      <tbody id="tablaBody"></tbody>
+    </table>
+
+    <script>
+      //Preparamos todo el documento
+      $(document).ready(function () {
+        //funcion que crea la fila
+        function creaFila(id, nombre, edad) {
+          return `
+            <tr>
+              <td>${id} </td>
+              <td>${nombre}</td>
+              <td>${edad}</td>
+            </tr>
+          `;
+        }
+
+        //Cuando pulse el boton, los datos se añadirán a la tabla
+        $("#boton").click(function(){
+          //Recojemos los valores del formulario
+          const id = $("#idInput").val();
+          const nombre = $("#nombreInput").val();
+          const edad = $("#edadInput").val();
+
+          //creamos la fila
+         const filaNueva = creaFila(id, nombre, edad);
+
+          //asignamos los datos a la tabla
+          $("#tablaBody").append(filaNueva);
+        });
+      });
+    </script>
+  </body>
+</html>

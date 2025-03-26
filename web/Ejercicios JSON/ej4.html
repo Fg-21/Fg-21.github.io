@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E4</title>
+
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <form id="formulario">
+      <label for="ID" id="nombre">Nombre</label>
+      <input type="text" id="nombreInput" />
+
+      <label for="Nombre" id="apellidos">Appellidos</label>
+      <input type="text" id="apellidosInput" />
+
+      <label for="Edad" id="edad">Edad</label>
+      <input type="number" id="edadInput" />
+
+      <label for="Hoobys" id="hobbys">Cantar</label>
+      <input type="checkbox" id="hCantar" name="hobbies[]" value = "Cantar" />
+
+      <label for="Hoobys" id="hobbys">Bailar</label>
+      <input type="checkbox" id="hBailar" name="hobbies[]" value = "Bailar"/>
+
+      <br /><br />
+
+      <button type="button" id="boton">Calcula</button>
+
+      <table border="1px">
+        <thead>
+          <td>Nombre</td>
+          <td>Apellido</td>
+          <td>Edad</td>
+          <td>Hobbies</td>
+        </thead>
+        <tbody id="tbody"></tbody>
+
+      </table>
+
+      
+    </form>
+    <p id="pSuma"></p>
+    <p id="pMedia"></p>
+    <p id="pMin"></p>
+    <p id="pMax"></p>
+
+    <script>
+      //Preparamos todo el documento
+      $(document).ready(function () {
+        let array = [];
+        //Cuando pulse el boton, los datos se añadirán a la tabla
+        $("#boton").click(function () {
+         
+         let hobi = $('input[name="hobbies[]"]')
+              .filter(":checked").map(function () {
+                return $(this).val();
+              })
+              .get();
+              console.log("HOBBIES:"+hobi);
+
+          let persona = {
+            //Recojemos los valores del formulario
+            nombre: $("#nombreInput").val(),
+            apellidos: $("#apellidosInput").val(),
+            edad: $("#edadInput").val(),
+            hobbies: hobi
+          };
+
+          console.log(persona);
+
+          array.push(persona);
+          //Enviamos los datos
+          envio(array);
+
+          
+
+        });
+      });
+
+      function envio(array) {
+        $.ajax({
+          url: "https://lm.iesnervion.es/eco.php",
+          method: "POST",
+          data: JSON.stringify(array),
+          contentType: "application/json", // Especifica el tipo de contenido
+          dataType: "json", // La respuesta será interpretada como JSON
+          success: function (response) {
+            console.log(response);
+            $("#pSuma").text("Suma:" + response.calculos.suma);
+            $("#pMedia").text("Media:" + response.calculos.media);
+            $("#pMin").text("Mínimo:" + response.calculos.min);
+            $("#pMax").text("Máximo:" + response.calculos.max);
+
+            $("#tbody").append(`<tr>
+              <td>${persona.nombre}</td>
+              <td>${persona.apellidos}</td>
+              <td>${persona.edad}</td>
+              <td>${persona.hobbies}</td>
+              </tr>`)
+
+          },
+          error: function (xhr, status, error) {
+            console.log(`Error: ${xhr.status} - ${error}`);
+          },
+        });
+      }
+    </script>
+  </body>
+</html>

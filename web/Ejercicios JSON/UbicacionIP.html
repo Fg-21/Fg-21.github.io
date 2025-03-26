@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Doxeo</title>
+
+    <script
+    src="https://code.jquery.com/jquery-3.7.1.js"
+    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"
+  ></script>
+
+  </head>
+  <body>
+    <form action="">
+      <label for="IP">IP</label>
+      <input type="text" id="ip" />
+      <button type="button" onclick="solicitud()" class="button">Mandar</button>
+    </form>
+
+    <div class="contG">
+      <div id="contCity">Ciudad<p id="city"></p></div>
+      <div id="contCountry">País<p id="country"></p></div>
+      <div id="contLat">Latitud<p id="lat"></p></div>
+      <div id="contLon">Longitud<p id="lon"></p></div>
+  </div>
+
+  <div class="contG">
+    <button type="button" class="button">Maps</button>
+
+  </div>
+
+    <style>
+
+      body{
+        margin-left:39%;
+      }
+        .contG{
+            background-color: aquamarine;
+            padding: 10px;
+            border-radius: 2%;
+            border: 1px solid black;
+            max-width: fit-content;
+            margin-top:20px;
+            display: flex;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            text-align: center;
+        }
+
+        .button{
+          background-color: coral;
+          border: 2px solid black;
+          font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        #contCity{
+            padding: 5px;
+            border: 1px solid black;
+            border-radius: 5%;
+            background-color:coral;
+            margin: 5px;
+            
+        }
+    
+        #contCountry{
+            padding: 5px;
+            border: 1px solid black;
+            border-radius: 5%;
+            background-color:coral;
+            margin: 5px;
+        }
+    
+        #contLat{
+            padding: 5px;
+            border: 1px solid black;
+            border-radius: 5%;
+            background-color:coral;
+            margin: 5px;
+        }
+    
+        #contLon{
+            padding: 5px;
+            border: 1px solid black;
+            border-radius: 5%;
+            background-color:coral;
+            margin: 5px;
+        }
+    
+        html{
+            background-color: beige;
+        }
+    
+    </style>
+
+    <script>
+
+      //Peticion a la API
+      function solicitud() {
+        //Recojo datos
+        let ip = document.getElementById("ip").value;
+        
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", `http://ip-api.com/json/${ip}`);
+        xhr.responseType = "json"; // Si no se indica, necesitará parseo
+
+        // Preparamos a continuación la recepción
+        xhr.onload = function () {
+          if (xhr.readyState == 4 && xhr.status == 200) {
+            const data = xhr.response;
+            console.log(data);
+            
+            $("#city").append(`${data.city}`)
+            $("#country").append(`${data.country}`)
+            $("#lat").append(`${data.lat}`)
+            $("#lon").append(`${data.lon}`)
+            
+          } else {
+            console.log("Error: ${xhr.status}");
+          }
+        };
+        xhr.send();
+      }
+    </script>
+  </body>
+</html>

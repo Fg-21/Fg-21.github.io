@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio Examen</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <h1>Palabras y Vocales</h1>
+
+    <button id="boton" type="button">Nueva Pagina</button>
+
+    <ul id="word"></ul>
+
+    <p id="a"></p>
+    <p id="e"></p>
+    <p id="i"></p>
+    <p id="o"></p>
+    <p id="u"></p>
+
+    <script>
+      $(document).ready(function () {
+        //Variable para guardar la palabra solicitada a la API
+        let palabra = "";
+        
+        //Array para ordenar las palabras
+        let palabras = [];
+        //Funcion para contar las vocales de la palabra
+        function cuentaVocales(palabra){
+           //Recorremos la palabra con un for echa 
+        }
+
+        //Cada vez que pulsemos el botton, hara un get a la API para obtener una palabra aleatoria
+        $("#boton").click(function solicitud () {
+            $.get(" https://random-word-api.herokuapp.com/word")
+              .done(function (data) {
+                //Guardamos la palabra en la variable y en la lista de palabras
+                palabra = data[0];
+                palabras.push(data[0]);
+                
+                palabras.sort();
+                console.log(data);
+
+                //Mostramos la palabra en el html junto con las otras
+                muestraWord(palabras);
+
+                //Mostramos las vocales de cada palabra
+                cuentaVocales(palabra, palabras);
+
+                
+              })
+              .fail(function (xhr, status, error) {
+                console.log(`Error: ${xhr.status} - ${error}`);
+              });
+          }
+      )});
+
+      //Funcion para mostrar las palabras ordenadas alfabeticamente en el html
+      function muestraWord(palabras){
+        //Vaciamos el contenedor de las palabras
+        $('#word').html('');
+        //Recorremos la lista de las palabras y vamos mostradondo segun el orden
+        palabras.forEach(palabra => {
+            $('#word').append('<li>' + palabra + '</li>');
+        });
+      }
+
+      //Funcion para contar las vocales de cada palabra
+      function cuentaVocales(palabra, palabras){
+        //Contador para cada una de las letras
+        let contA = 0;
+        let contE = 0;
+        let contI = 0;
+        let contO = 0;
+        let contU = 0;
+
+        //Vemos si la palabra empieza por vocal
+        if (palabra[0] == 'a'){
+            contA++;
+            $('#a').append("A: " + contA); 
+        }
+      }
+    </script>
+  </body>
+</html>
